@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Unique Website</title>
+    <style>
+        body {
+            background: url('https://static.pexels.com/photos/36753/flower-purple-lical-blosso.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #ff263238;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #ffbcaaa4;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffffeb3b;
+            padding: 1em;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #fffafafa;
+        }
+
+        #content {
+            text-align: center;
+            padding: 2em;
+        }
+
+        .larger-text {
+            font-size: 1.2em;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        main h1 {
+            color:#fff5f5f5;
+        }
+
+        main p {
+            color: #fffafafa;
+            line-height: 1.6em;
+        }
+        script {
+            color: white;
+        }
+
+
+        #flex-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+            gap: 10px; /* Adjust the gap between images */
+        }
+
+        #flex-gallery img {
+            width: 100%; /* Ensure images take full width within the grid */
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="changePage('home')">Home Page</a></li>
+                <li><a href="#" onclick="changePage('blog')">IT Blog</a></li>
+                <li><a href="#" onclick="changePage('flex')">Flex Page</a></li>
+                <!-- Add the following line for your social media link -->
+                <li><a href="https://www.facebook.com/shyne.borrromeo.7 target="_blank">Social Media</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="content">
+        <h1> EXPLORE MY WORK <span class="larger-text">PRESS FOR MORE.</span></h1>
+    </div>
+
+    <script>    
+        function changePage(page) {
+            let content = document.getElementById('content');
+            switch (page) {
+                case 'home':
+                    content.innerHTML = '<h2>HOME PAGE</h2><p>Making this Dream into reality is one of a shot.I Am Aira Shyne Borromeo ,18 an EMC-DAT student,10 years from now,I am one of a best person to make there dream world to reality using the power of technology,a happy yet busy life,a rich life I would offer to my parents and family.</p><div class="bordered-text"><p> Here are my Skills & Hobbies:</p><p>*Eating</p><p>*Watching Movies</p></div><div id="home-image-container"><img id="home-image" src="https://static.pexels.com/photos/36753/flower-purple-lical-blosso.jpg" alt="Your Image"></div><p>Connect with me on <a href="https://www.your-social-media-url.com" target="_blank">Social Media</a> for updates.</p><button onclick="returnHome()">Return to Homepage</button>';
+                    break;
+                case 'blog':
+                    content.innerHTML = '<h2>IT BLOG</h2><p> Binary Number System: </p> <p>Understanding the binary number system was like decoding the secret language of computers. It felt like deciphering the building blocks of digital information. The idea that everything in the digital realm boils down to sequences of 0s and 1s was mind-blowing. It challenged me to rethink how I perceive numbers and laid the foundation for comprehending the inner workings of computers.</p><p>Introduction to HTML</p><p>Learning HTML was akin to crafting my first digital canvas. Each HTML tag felt like an artist\'s brushstroke, defining the structure and content of a webpage. It was fascinating to see how a few simple tags could transform plain text into a visually appealing and structured document. HTML provided the scaffolding for web content, and mastering it felt like gaining the power to shape the digital world.</p><p>CSS (Cascading Style Sheets)</p><p>CSS, in my journey, was the magic wand of web design. It allowed me to breathe life into HTML, bringing style, color, and layout to the digital canvas. The concept of selectors, properties, and values felt like learning the language of aesthetics. It was a creative journey, figuring out how to make elements dance on the screen, and the box model became my guide to mastering the art of layout.</p> <p>In summary, these foundational concepts—binary numbers, HTML, and CSS—shaped my understanding of the digital landscape. They were not just lessons; they were gateways into a world where I could speak the language of computers and create digital experiences. Each challenge was a step towards empowerment, enabling me to express myself in the vast realm of the internet.</p>';
+                    break;
+                case 'flex':
+                    content.innerHTML = '<h2>FLEX PAGE</h2><p>flexin.</p><div id="flex-gallery">';
+                    content.innerHTML += '<img src="Phone/DCIM/camera/IMG20231210080838.jpg" alt="Image 1">';
+                    content.innerHTML += '<img src="Phone/DCIM/camera/IMG20231213075253.jpg" alt="Image 2">';
+                    content.innerHTML += '<img src="Phone/Picture/facebook/FB_IMG_17024683743403333.jpg" alt="Image 3">';
+                    content.innerHTML += '</div>';
+                    break;
+            }
+            let navItems = document.querySelectorAll('nav a');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.innerText.toLowerCase().includes(page)) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        function returnHome() {
+            changePage('home');
+        }
+                        document.querySelector('script').style.color = 'white';
+    </script>
+
+    <main>
+        <h1>Welcome to my website!</h1>
+        <p>Not nice but works.</p>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
